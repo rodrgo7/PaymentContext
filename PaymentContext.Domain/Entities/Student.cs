@@ -1,20 +1,21 @@
+using PaymentContext.Domain.ValueObjects;
+
 namespace PaymentContext.Domain.Entities
 {
     public class Student
     {
         private IList<Subscription> _subscriptions;
         
-        public string FirstName { get; private set; }
+        public Name Name { get; private set; }
         public string LastName { get; private set; }
-        public string Document { get; private set; }
-        public string Email { get; private set; }
+        public Document Document { get; private set; }
+        public Email Email { get; private set; }
         public string Address { get; private set; }
         public IReadOnlyCollection<Subscription> Subscriptions { get { return _subscriptions.ToArray(); } }
 
-        public Student(string firstName,  string lastName, string document, string email)
+        public Student(Name name, Document document, Email email)
         {
-            FirstName = firstName;
-            LastName = lastName;
+            Name = name;
             Document = document;
             Email = email;
             _subscriptions = new List<Subscription>();
@@ -27,7 +28,7 @@ namespace PaymentContext.Domain.Entities
 
             foreach (var sub in Subscriptions)
             {
-                sub.Active = false;
+                sub.Inactivate();
             }
 
             _subscriptions.Add(subscription);

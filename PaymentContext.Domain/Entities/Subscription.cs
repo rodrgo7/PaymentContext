@@ -2,13 +2,15 @@ namespace PaymentContext.Domain.Entities
 {
     public class Subscription
     {
-        public Subscription(DateTime createDate, DateTime lastUpdateDate, DateTime? expireDate, bool active, List<Payment> payments)
+        private IList<Payment> _payments;
+        
+        public Subscription(DateTime? expireDate)
         {
-            CreateDate = createDate;
-            LastUpdateDate = lastUpdateDate;
+            CreateDate = DateTime.Now;
+            LastUpdateDate = DateTime.Now;
             ExpireDate = expireDate;
-            Active = active;
-            Payments = payments;
+            Active = true;
+            _payments = new List<Payment>();
         }
 
         public DateTime CreateDate { get; set; }
@@ -16,5 +18,16 @@ namespace PaymentContext.Domain.Entities
         public DateTime? ExpireDate { get; set; }
         public bool Active {get; set; }
         public List<Payment> Payments {get; set;}
+
+        public void Activate()
+        {
+            Active = true;
+            LastUpdateDate = DateTime.Now;
+        }
+        public void Inactivate()
+        {
+            Active = false;
+            LastUpdateDate = DateTime.Now;
+        }
     }
 }

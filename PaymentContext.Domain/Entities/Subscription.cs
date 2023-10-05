@@ -1,9 +1,12 @@
+using Flunt.Validations;
+using Flunt.Notifications;
+
 namespace PaymentContext.Domain.Entities
 {
     public class Subscription
     {
         private IList<Payment> _payments;
-        
+
         public Subscription(DateTime? expireDate)
         {
             CreateDate = DateTime.Now;
@@ -16,8 +19,22 @@ namespace PaymentContext.Domain.Entities
         public DateTime CreateDate { get; set; }
         public DateTime LastUpdateDate { get; set; }
         public DateTime? ExpireDate { get; set; }
-        public bool Active {get; set; }
-        public List<Payment> Payments {get; set;}
+        public bool Active { get; set; }
+        public List<Payment> Payments { get; set; }
+
+        public void AddPayment(Payment payment) 
+        {
+            AddNotifications(new Contract<Student>()
+                .Requires()
+                .IsGreaterThan(DateTime.Now, payment.PaidDate, "Subscription.Payments", "A data do pagamento")
+            );
+            _payments.Add(payment);
+        }
+
+        private void AddNotifications(Contract<Student> contract)
+        {
+            throw new NotImplementedException();
+        }
 
         public void Activate()
         {

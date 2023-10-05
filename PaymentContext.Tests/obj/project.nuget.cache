@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "9OV4qLse2BAPtfmo2EHNFKiycwVMCNUIuHYqkUl0pGOGNO+W+Y/3JaIykzfGw+JrZ/katjwZp6KMdV6TEaJs3A==",
+  "dgSpecHash": "6tF6YLczyebrMZk+758FxI1TMfC5Av6eGiMac7sFwDzg0dTifPcQ4/AShC4lfaMeCS/Gk/2J6depAXEaQGHOzQ==",
   "success": true,
-  "projectFilePath": "D:\\_Projetos\\PaymentContext\\PaymentContext.Tests\\PaymentContext.Tests.csproj",
+  "projectFilePath": "C:\\Projetos\\PaymentContext\\PaymentContext.Tests\\PaymentContext.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rodrgo\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
+    "C:\\Users\\Rodrgo\\.nuget\\packages\\flunt\\2.0.5\\flunt.2.0.5.nupkg.sha512",
     "C:\\Users\\Rodrgo\\.nuget\\packages\\microsoft.codecoverage\\17.5.0\\microsoft.codecoverage.17.5.0.nupkg.sha512",
     "C:\\Users\\Rodrgo\\.nuget\\packages\\microsoft.net.test.sdk\\17.5.0\\microsoft.net.test.sdk.17.5.0.nupkg.sha512",
     "C:\\Users\\Rodrgo\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
